@@ -1,0 +1,26 @@
+<%#inside the display for tv shows%>
+<table class="table table-bordered"> 
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Language</th>
+      <th>Rating</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= show.name %></td>
+      <td><%= show.genre %></td>
+      <td><%= show.language %></td>
+      <td><%= show.rating %></td>
+      <td>
+      <div class="btn-group" role="group">
+        <%= link_to "Edit", edit_show_path(show), class: "btn btn-primary btn-sm" %>
+        <%= button_to 'Delete', @show, method: :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
