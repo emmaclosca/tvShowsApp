@@ -33,7 +33,7 @@ jobs:
   deploy:
     docker:
       - image: cimg/ruby:3.1.0
-      steps:
+    steps:
         - run:
             name: world
             command: echo world
