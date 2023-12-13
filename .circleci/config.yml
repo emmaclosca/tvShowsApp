@@ -42,7 +42,7 @@ jobs:
   deploy:
     docker:
       - image: cimg/ruby:3.1.0
-      steps:
+    steps:
         - run:
             name: deploy-application
             command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export CONTAINER_NAME=\"$CONTAINER_NAME\"; export IMAGE_NAME=\"$IMAGE_NAME\"; rm -rf tvShowsApp/; git clone https://github.com/emmaclosca/tvShowsApp; source tvShowsApp/deploy.sh"
