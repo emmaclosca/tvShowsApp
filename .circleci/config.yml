@@ -28,8 +28,11 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: docker-login
-          command: echo "Euemanuela1320!" | docker login -u "emmaclosca" --password-stdin
+          name: emmaclosca
+          command: docker login -u $DOCKER_USERNAME 
+      - run:
+          name: Euemanuela1320!
+          command: docker login -p $DOCKER_PASSWORD
       - run:
           name: build-docker-image
           command: docker build -t $IMAGE_NAME:latest . --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE
