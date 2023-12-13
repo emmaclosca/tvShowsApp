@@ -29,7 +29,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: docker-login
-          command: echo "abcdex" | docker login -u "abcde" --password-stdin
+          command: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - run:
           name: build-docker-image
           command: docker build -t $IMAGE_NAME:latest . --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE
