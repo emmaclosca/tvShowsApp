@@ -23,9 +23,16 @@
   <div class="mb-3">
     <%= form.number_field :rating, placeholder:"Rating", class:"form-control" %>
   </div>
+  
+  <%# for testing purposes
   <div class="mb-3">
-    <%= form.number_field :user_id, id: :show_user_id, type: :hidden, value:current_user.id, class:"form-control" %> <%# this line creates an id for each user to associate it to its own created list%>
+    <%= form.label :user_id, "Select User" %>
+  <%#  <%= form.collection_select :user_id, User.all, :id, :email, { prompt: "Select user" }, class: "form-control" %> 
+
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :show_user_id, type: :hidden, value: current_user&.id, class: "form-control" %> <%# this line creates an id for each user to associate it to its own created list%>
   </div>
+
   <div class="mb-3"> 
     <%= form.submit class: "btn btn-sm btn-success"%>
   </div>
